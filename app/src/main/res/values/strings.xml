@@ -3,7 +3,10 @@
     <string name="android_logo_image">android logo</string>
     <string name="mobile_no_text">+91 9999999999</string>
     <string name="mail_address_text">sriram_s24@yahoo.com</string>
-    <string name="github_link_text">github_link_text</string>
+    <string name="github_link_text">https://github.com/srirams24</string>
     <string name="name_text">Sriram S</string>
     <string name="title_text">Android Developer</string>
+    <string name="phone_icon_text">Phone Icon</string>
+    <string name="mail_icon_text">Mail Icon</string>
+    <string name="github_icon_text">Github icon</string>
 </resources>
