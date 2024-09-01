@@ -10,12 +10,10 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Email
@@ -30,7 +28,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
@@ -69,7 +66,7 @@ fun ProfileSection(
     profileImage: Painter,
     name: String,
     title: String,
-    cardBackgroundColor : Color = colorResource(id = R.color.card_background),
+    cardBackgroundColor : Color = Color.Black.copy(alpha = 0.5f),
     modifier: Modifier = Modifier) {
 
     // Column Layout to display the profile section
@@ -79,7 +76,7 @@ fun ProfileSection(
         modifier = modifier
             .padding(32.dp)
             .border(2.dp, Color.Gray, shape = RoundedCornerShape(10.dp))
-            .background(color = cardBackgroundColor)
+            .background(color = cardBackgroundColor, shape = RoundedCornerShape(10.dp))
             .fillMaxSize()
     ) {
         // Image Composable to display the profile image
@@ -90,7 +87,6 @@ fun ProfileSection(
                 .size(250.dp)
                 // Border to the image  with a shape of a rounder corner
                 .border(2.dp, Color.White, shape = RoundedCornerShape(16.dp))
-
         )
         // Text Composable to display the developer name
         Text(
@@ -133,7 +129,7 @@ fun ContactRowField(
             .fillMaxWidth()
             .padding(start = 28.dp),
         // Spacing between the icon and the contact information
-        horizontalArrangement = Arrangement.spacedBy(10.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         // Icon Composable to display the contact icon
@@ -145,10 +141,6 @@ fun ContactRowField(
                 .padding(top = 8.dp)
 
         )
-
-        // Spacer to add space between the icon and the contact information
-        Spacer(modifier = Modifier.width(8.dp))
-
         // Text Composable to display the contact information
         Text(
             text = contactInfo,
@@ -158,6 +150,8 @@ fun ContactRowField(
             modifier = Modifier
                 .padding(top = 8.dp)
                 .weight(1F)
+
+
         )
     }
 }
@@ -174,7 +168,7 @@ fun ContactSection(
     phoneNumber: String,
     mailAddress: String,
     githubLink: String,
-    cardBackgroundColor : Color = colorResource(id = R.color.card_background),
+    cardBackgroundColor : Color = Color.Black.copy(alpha = 0.5f),
     modifier: Modifier = Modifier
 ) {
     // Column Layout to display the contact section
@@ -183,7 +177,7 @@ fun ContactSection(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
             .padding(32.dp)
-            .background(color = cardBackgroundColor)
+            .background(color = cardBackgroundColor, shape = RoundedCornerShape(10.dp))
             .border(2.dp, Color.Gray, shape = RoundedCornerShape(10.dp))
             .fillMaxSize()
     ) {
